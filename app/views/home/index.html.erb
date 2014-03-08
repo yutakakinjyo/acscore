@@ -1,5 +1,12 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 <p>
-  <% @user.email %>
+  <%= @user.email %>
 </p>
+
+<tr>
+  <% @scores.each do |score| %>
+    <%= score.user_id %>
+  <% end %>
+</tr>
+
