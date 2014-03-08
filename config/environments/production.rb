@@ -78,7 +78,4 @@ Acscore::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  # devise secret_key                                                                                                           # reference http://qiita.com/tkawa/items/df29f782ed5cd89cae25
-  config.secret_key = ENV['DEVISE_SECRET_KEY']
-
 end
