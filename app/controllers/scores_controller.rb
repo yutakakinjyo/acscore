@@ -4,7 +4,7 @@ class ScoresController < ApplicationController
   # GET /scores
   # GET /scores.json
   def index
-    @scores = Score.all
+    @scores = current_user.scores
   end
 
   # GET /scores/1
