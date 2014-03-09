@@ -4,11 +4,12 @@
   <%= @user.email %>
 </p>
 
+<%= render 'form' %>
+
 <tr>
   <% @scores.each do |s| %>
-    <%= s.user_id %>
+    <%= s.created_at %>
+    <br>
   <% end %>
 </tr>
-
-<%= render 'form' %>
 
