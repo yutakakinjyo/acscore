@@ -11,7 +11,14 @@ class HomeController < ApplicationController
     @date_array = []
     while @last_month != @now.tomorrow do
       @size = @scores.where(created_at: @last_month.beginning_of_day..@last_month.end_of_day).size
-      @hash = {"date" => @last_month, "score" => @size}
+      if @size > 30 then
+        @color = "green"
+      elsif @size >= 1 then
+        @color = "lightgreen"
+      else
+        @color = "lightgray"
+      end
+      @hash = {"date" => @last_month, "score" => @size, "color" => @color}
       @date_array.push(@hash)
       @last_month = @last_month.tomorrow
     end
