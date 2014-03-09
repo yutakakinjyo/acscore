@@ -4,9 +4,12 @@
   <%= @user.email %>
 </p>
 
+<%= render 'form' %>
+
 <tr>
-  <% @scores.each do |score| %>
-    <%= score.user_id %>
+  <% @scores.each do |s| %>
+    <%= s.created_at.strftime("%Y/%m/%d %X") %>
+    <br>
   <% end %>
 </tr>
 
