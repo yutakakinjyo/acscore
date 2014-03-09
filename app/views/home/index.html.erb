@@ -6,10 +6,39 @@
 
 <%= render 'form' %>
 
+<table>
+  <td>
+    <% if !@scores.nil? %>
+      <%= @now.strftime("%Y/%m/%d %X") %>
+    <% end %>
+  </td>
+</table>
+
+<table>
 <tr>
-  <% @scores.each do |s| %>
-    <%= s.created_at.strftime("%Y/%m/%d %X") %>
-    <br>
+  <% @date_array.each do |d| %>
+    <td>
+      <%= d["date"].strftime("%d")%>
+      <%= d["score"] %>
+    </td>
   <% end %>
 </tr>
+</table>
+
+<table>
+<tr>
+  <td>
+    <% if !@scores.nil? %>
+      <%= @scores.size %>
+    <% end %>
+  </td>
+</tr>
+  <% @scores.each do |s| %>
+<tr>
+    <td>
+      <%= s.created_at.strftime("%Y/%m/%d %X") %>
+    </td>
+</tr>
+  <% end %>
+</table>
 

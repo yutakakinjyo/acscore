@@ -14,8 +14,9 @@
 <% if alert %>
   <p class="alert alert-error"><%= alert %></p>
 <% end %>
-
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% if user_signed_in? %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% end %>
 <%= yield %>
 
 </body>
