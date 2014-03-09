@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @user = current_user
-    @score = @user.scores.build()
+    @score = Score.new
     @scores = @user.scores
   end
 end
