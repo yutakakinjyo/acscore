@@ -16,9 +16,10 @@
 
 <table>
 <tr>
-  <% @da.each do |d| %>
+  <% @date_array.each do |d| %>
     <td>
-      <%= d.strftime("%d")%>
+      <%= d["date"].strftime("%d")%>
+      <%= d["score"] %>
     </td>
   <% end %>
 </tr>
