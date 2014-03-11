@@ -5,19 +5,24 @@ class HomeController < ApplicationController
   def index
     @scores = current_user.scores
     now = Time.now
-    current_month = now.last_month
+    current_date = now.last_month
     @date_array = []
-    while current_month  != now.tomorrow do
-      size = @scores.where(created_at: current_month.beginning_of_day..current_month.end_of_day).size
-      if size > 30 then
-        color = "green"
-      elsif size >= 1 then
-        color = "lightgreen"
-      else
-        color = "lightgray"
-      end
-      @date_array << {"date" => current_month, "color" => color}
-      current_month = current_month.tomorrow
+    while current_date != now.tomorrow do
+      day_score = @scores.where(created_at: current_date.beginning_of_day..current_date.end_of_day).size
+      color = get_color(day_score)
+      @date_array << {"date" => current_date, "color" => color}
+      current_date = current_date.tomorrow
     end
   end
+  
+  def get_color score
+      if score > 30 then
+        return "green"
+      elsif score >= 1 then
+        return "lightgreen"
+      else
+        return "lightgray"
+      end
+  end
+
 end
