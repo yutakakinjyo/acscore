@@ -1,20 +1,18 @@
 <h1>Academy Score</h1>
 
 <p>
-  <%= @user.email %>
+  <%= current_user.email %>
 </p>
 
 <%= render 'form' %>
 
-<% if !@scores.nil? %>
-  Total Score : <%= @scores.size %>
-<% end %>
+Total Score : <%= @total_score %>
 
 <table>
 <tr>
-  <% @date_array.each do |d| %>
-    <td bgcolor=<%= d["color"] %>>
-      <%= d["date"].strftime("%d")%>
+  <% @score_calendar.each do |date| %>
+    <td bgcolor=<%= date["color"] %>>
+      <%= date["date"].strftime("%d")%>
     </td>
   <% end %>
 </tr>
