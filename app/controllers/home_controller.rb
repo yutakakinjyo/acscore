@@ -16,8 +16,7 @@ class HomeController < ApplicationController
       else
         color = "lightgray"
       end
-      @hash = {"date" => current_month, "score" => size, "color" => color}
-      @date_array.push(@hash)
+      @date_array << {"date" => current_month, "color" => color}
       current_month = current_month.tomorrow
     end
   end
