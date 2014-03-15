@@ -4,14 +4,12 @@ describe User do
   describe "total_score" do
     before do
       @user = User.new
-      score = score.new
-      score.user_id = @user.id
-      @user.save
-      score.save
+      @user.save(validate: false)
+      @user.scores.create
     end
-    context "get total score" do
-      it "total score is 1" do
-       @user.total_score.should 1
+    context "call total score" do
+      it "has one socre" do
+       expect(@user.total_score).to eq(1)
       end
     end
   end
