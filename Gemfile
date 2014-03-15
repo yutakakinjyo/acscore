@@ -47,7 +47,7 @@ end
 
 gem 'devise'
 
-group :test do
+group :development, :test do
     gem "rspec"
     gem "rspec-rails"
 end
