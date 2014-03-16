@@ -9,7 +9,7 @@ describe User do
     end
     context "call total score" do
       it "has one socre" do
-       expect(@user.total_score).to eq(2)
+       expect(@user.total_score).to eq(1)
       end
     end
   end
