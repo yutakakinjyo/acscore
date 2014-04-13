@@ -45,7 +45,11 @@ module Merit
       # end
 
       grant_on 'registrations#create', badge: 'just-registered', model_name: 'User'
+      grant_on 'scores#create', badge: 'はじめてのスコア', to: :user
 
+      grant_on 'scores#create', badge: 'だんだん慣れてきた' do |score|
+        score.user.scores.size > 9
+      end
     end
   end
 end

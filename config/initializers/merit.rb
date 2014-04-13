@@ -34,6 +34,17 @@ end
 
 Merit::Badge.create!(
   id: 1,
-  name: "just-registered",
-  description: "get Account",
+  name: "just-registered"
+)
+
+Merit::Badge.create!(
+  id: 3,
+  name: "だんだん慣れてきた",
+  description: "スコアを10以上取得した",
+)
+
+Merit::Badge.create!(
+  id: 2,
+  name: "はじめてのスコア",
+  description: "スコアを1以上取得した",
 )
