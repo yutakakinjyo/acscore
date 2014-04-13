@@ -1,7 +1,7 @@
 Acscore::Application.routes.draw do
   get "home/index"
   resources :scores
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

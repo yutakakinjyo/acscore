@@ -16,3 +16,9 @@ Total Score : <%= @total_score %>
     </td>
   <% end %>
 </tr>
+
+<ul>
+<% current_user.badges.each do |badge| %>
+  <li><%= badge.name %></li>
+<% end %>
+</ul>

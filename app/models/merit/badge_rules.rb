@@ -43,6 +43,9 @@ module Merit
       #
       #   user.name.length > 4
       # end
+
+      grant_on 'registrations#create', badge: 'just-registered', model_name: 'User'
+
     end
   end
 end
