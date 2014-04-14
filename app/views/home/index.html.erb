@@ -16,3 +16,12 @@ Total Score : <%= @total_score %>
     </td>
   <% end %>
 </tr>
+</table>
+
+<h3> 取得したバッチ </h3>
+
+<ul>
+<% current_user.badges.each do |badge| %>
+  <li><image src="http://www.kg905.jp/images/sozai/icon/kinbacchi_3_1.jpg"　              width=10> <b><%= badge.name %></b> : <%= badge.description %></li>
+<% end %>
+</ul>
